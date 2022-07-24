@@ -7,16 +7,11 @@ import Home from "./routes/Home.js";
 import Detail from "./routes/Detail.js"
 
 function App() {
-
   return (
   <Router>
     <Switch>
-      <Route path="/movie/:id">
-        <Detail />
-      </Route>
-      <Route path="/">
-        <Home />
-      </Route>
+      <Route path="/movie/:id" exact={true} component={Detail} />
+      <Route path="/" component={Home} />
     </Switch>
   </Router>
   );

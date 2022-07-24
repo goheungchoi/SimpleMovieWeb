@@ -1,5 +1,4 @@
-# Simple React.js Application
-ver 0.8
+# Simple React.js Application <sub>ver 0.8</sub>
 
 ## Description
 I made this project for practising react.js and using API.

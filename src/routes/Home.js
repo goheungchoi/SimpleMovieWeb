@@ -1,64 +1,79 @@
 import Movie from '../components/Movie.js';
+import Loading from '../components/Loading.js';
 import style from '../App.css';
-import { useState, useEffect } from 'react';
+import React from 'react';
 
-function Home() {
+class Home extends React.Component {
   /** loads api **/ 
-  const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
-  const [genre_map, setGenreMap] = useState(new Map());
-  const [config, setConfig] = useState([]);
+  state = {
+    loading: true,
+    movies: [],
+    genre_map: new Map(),
+    config: []
+  };
 
-  const getMovies = async() => {
+  getMovies = async() => {
     const response = await fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=107022cc2f0c53521edf76214397b7df")
     const json = await response.json();
-    setMovies(json.results);
-  }
-  const getGenres = async() => {
+    this.setState({ movies: json.results });
+  };
+  getGenres = async() => {
     const response = await fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=107022cc2f0c53521edf76214397b7df")
     const json = await response.json();
     json.genres.forEach(element => 
-      setGenreMap(genre_map.set(element.id, element.name))
+      this.setState(this.state.genre_map.set(element.id, element.name))
     );
-  }
-  const getConfig = async() => {
+  };
+  getConfig = async() => {
     const response = await fetch("https://api.themoviedb.org/3/configuration?api_key=107022cc2f0c53521edf76214397b7df")
     const json = await response.json();
-    setConfig(json.images)
-    setLoading(false);
+    this.setState({ config: json.images });
+  };
+
+  sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  useEffect( () => {
-    getMovies();
-    getGenres();
-    getConfig();
-  });
+  getAPI = async() => {
+    await this.getMovies();
+    await this.getGenres();
+    await this.getConfig();
+    await this.sleep(5000);
+    await this.setState({loading: false});
+  }
+
+  componentDidMount() {
+    this.getAPI();
+  };
   /** ends loading **/ 
 
-  const getGenreNames = (genre_ids, genre_map) => {
+  getGenreNames = (genre_ids, genre_map) => {
     let genres = [];
     genre_ids.forEach((e) => {
       genres.push(genre_map.get(e));
     });
     return genres;
-  }
+  };
 
-  return (
-    <div className={style.App}>
-      {loading ? <h1>Loading...</h1> : 
-        <div>
-          {movies.map(movie => 
-            <Movie 
-              key={movie.id}
-              movie={movie} 
-              config={config} 
-              genres={getGenreNames(movie.genre_ids, genre_map)} 
-            />
-          )}
-        </div>
-      }
-    </div>
-  );
+  render() {
+    const { loading, movies, config, genre_map} = this.state;
+    return (
+      <div className={style.App}>
+        {loading ? <Loading /> : 
+          <div>
+            {movies.map(movie => 
+              <Movie 
+                key={movie.id}
+                movie={movie} 
+                config={config} 
+                genres={this.getGenreNames(movie.genre_ids, genre_map)} 
+              />
+            )}
+          </div>
+        }
+      </div>
+    );
+  };
 }
 
 export default Home;

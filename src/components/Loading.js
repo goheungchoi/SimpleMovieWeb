@@ -1,10 +1,13 @@
 import React from 'react'
-import style from './Loading.module.css'
+import style from '../style/Loading.module.css'
 
-function Loading() {
+function Loading({ ready_ }) {
   return (
     <div className={style.Body}>
-      <div className={style.Loading_screen_header}>
+      <div className=
+          {`${style.Loading_screen_header} 
+            ${!ready_ ? style.Loading_screen_init :
+                        style.Loading_screen_fin }`}>
         <span className={style.Header}>Loading</span>
         <div className={style.lds_ring}>
           <div></div>

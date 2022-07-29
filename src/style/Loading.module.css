@@ -1,16 +1,37 @@
 .Body {
   text-align: center;
+  z-index: 50;
 }
 
 .Loading_screen_header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+}
+
+.Loading_screen_init {
+  background-color: #282c34;
   color: white;
+}
+
+.Loading_screen_fin {
+  background-color: transparent;
+  color: transparent;
+  animation: loading_fin 3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+@keyframes loading_fin {
+  0% {
+    background-color: #282c34;
+    color: white;
+  }
+  100% {
+    background-color: white;
+    color: transparent;
+  }
 }
 
 .Header {
@@ -25,6 +46,7 @@
   width: calc(80px + 2vmin);
   height: 80px;
 }
+
 @media (prefers-reduced-motion: no-preference) {
   .lds_ring div {
     box-sizing: border-box;
@@ -48,6 +70,7 @@
     animation-delay: -0.15s;
   }
 }
+
 @keyframes lds_ring {
   0% {
     transform: rotate(0deg);

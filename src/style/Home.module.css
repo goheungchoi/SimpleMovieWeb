@@ -1,0 +1,91 @@
+.Body {
+  text-align: center;
+}
+
+.Screen {
+  background-color: white;
+  width:100%;
+  height:100%;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  animation: screen_animation 1.5s ease-in;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+@keyframes screen_animation {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+.Container {
+  background-color: white;
+  min-height: inherit;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #181a1f;
+  z-index: 0;
+}
+
+.backDrop_init {
+  display: block;
+  background-color: #000;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  opacity: 0.0;
+}
+
+.backDrop_active {
+  display: block;
+  background-color: #000;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  opacity: 0.7;
+  transition: opacity 500ms;
+}
+
+.backDrop_done {
+  display: block;
+  background-color: #000;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  opacity: 0.7;
+}
+
+.backDrop_exit {
+  display: block;
+  background-color: #000;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  opacity: 0.0;
+  transition: opacity 500ms;
+}

@@ -4,14 +4,16 @@ import {
   Route,
 } from 'react-router-dom';
 import Home from "./routes/Home.js";
-import Detail from "./routes/Detail.js"
+import About from "./routes/About.js";
+import Contact from "./routes/Contact.js";
 
 function App() {
   return (
   <Router>
     <Switch>
-      <Route path="/movie/:id" exact={true} component={Detail} />
-      <Route path="/" component={Home} />
+      <Route path="/about/" component={About} />
+      <Route path="/contact/" component={Contact} />
+      <Route exact path="/" component={Home} />
     </Switch>
   </Router>
   );

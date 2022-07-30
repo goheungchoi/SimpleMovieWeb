@@ -1,4 +1,4 @@
-# Simple React.js Application <sub>ver 1.0</sub>
+# TMDB Top 20 Movies Web <sub>ver 1.0</sub>
 
 ## Description
 This is a website built in react-app that shows API data of the top 20 movies from IMDB.

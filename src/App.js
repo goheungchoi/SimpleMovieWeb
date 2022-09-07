@@ -9,13 +9,13 @@ import Contact from "./routes/Contact.js";
 
 function App() {
   return (
-  <Router>
-    <Switch>
-      <Route path="/about/" component={About} />
-      <Route path="/contact/" component={Contact} />
-      <Route exact path="/" component={Home} />
-    </Switch>
-  </Router>
+    <Router>
+      <Switch>
+        <Route path="/about/" component={About} />
+        <Route path="/contact/" component={Contact} />
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 }
 

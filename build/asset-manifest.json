@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.2751f780.css",
-    "main.js": "/static/js/main.bdd58546.js",
-    "static/media/shortcut.svg": "/static/media/shortcut.bf7f470b3821af1da7fa249c87dadea3.svg",
-    "index.html": "/index.html",
-    "static/media/xicon.svg": "/static/media/xicon.4a3d2b8e155819d16a795fc93a6da67d.svg",
-    "main.2751f780.css.map": "/static/css/main.2751f780.css.map",
-    "main.bdd58546.js.map": "/static/js/main.bdd58546.js.map"
+    "main.css": "/TMDB-top-20-movies-web/static/css/main.b1d70e65.css",
+    "main.js": "/TMDB-top-20-movies-web/static/js/main.0cafa0ee.js",
+    "static/media/shortcut.svg": "/TMDB-top-20-movies-web/static/media/shortcut.bf7f470b3821af1da7fa249c87dadea3.svg",
+    "index.html": "/TMDB-top-20-movies-web/index.html",
+    "static/media/xicon.svg": "/TMDB-top-20-movies-web/static/media/xicon.4a3d2b8e155819d16a795fc93a6da67d.svg",
+    "main.b1d70e65.css.map": "/TMDB-top-20-movies-web/static/css/main.b1d70e65.css.map",
+    "main.0cafa0ee.js.map": "/TMDB-top-20-movies-web/static/js/main.0cafa0ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.2751f780.css",
-    "static/js/main.bdd58546.js"
+    "static/css/main.b1d70e65.css",
+    "static/js/main.0cafa0ee.js"
   ]
 }

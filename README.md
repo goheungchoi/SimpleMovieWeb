@@ -1,4 +1,4 @@
-# Top 20 Movies Web
+# Top 20 Movies
 
 **Creator**: Goheung Choi
 

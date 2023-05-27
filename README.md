@@ -1,6 +1,6 @@
 # Top 20 Movies
 
-**Creator**: Goheung Choi
+**Author**: Goheung Choi
 
 **Version**: *`1.0.0`*
 
